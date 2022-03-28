@@ -1,0 +1,89 @@
+Halo, kali ini saya akan mencoba menggunakan selenium, cucumber, dan maven untuk melakukan automated testing pada website http://tutorialsninja.com/demo/
+Website ini adalah salah satu website yang direkomendasikan untuk belajar automated software testing 
+
+
+
+
+
+
+
+
+
+
+
+
+Scenario : Register
+
+Step 1 : go to http://tutorialsninja.com/demo/
+
+Step 2 : klik elemen <li class="dropdown"> yang elemen xpathnya adalah : //*[@id="top-links"]/ul/li[2]
+
+Step 3 : klik elemen <a href="http://tutorialsninja.com/demo/index.php?route=account/register">Register</a> pada elemen yang xpathnya adalah: //*[@id="top-links"]/ul/li[2]/ul/li[1]/a   yang terletak di dalam
+ <ul class="dropdown-menu dropdown-menu-right"> yang elemen xpathnya adalah : //*[@id="top-links"]/ul/li[2]/ul
+
+*Sekarang kita di form register
+
+Step 4 : ketik "Jonathan" pada elemen yang xpath nya adalah :     //*[@id="input-firstname"]
+
+Step 5 : ketik "Regan" pada elemen yang xpath nya adalah :     //*[@id="input-lastname"]
+
+Step 6 : ketik "jonathanreganuntoro@yahoo.com" pada elemen yang xpath nya adalah : //*[@id="input-email"]
+
+Step 7 : ketik "0818326755" pada elemen yang xpath nya adalah : //*[@id="input-telephone"]
+
+Step 8 : ketik "abcdefg" pada elemen yang xpath nya adalah : //*[@id="input-password"]
+
+Step 9 : ketik "abcdefg" pada elemen yang xpathnya adalah : //*[@id="input-confirm"]
+
+Step 10 : centang I have read and agree to the Privacy Policy pada elemen yang xpathnya adalah : //*[@id="content"]/form/div/div/input[1]
+
+Step 11 : klik tombol submit pada elemen yang xpathnya adalah : //*[@id="content"]/form/div/div/input[2]
+
+
+
+//*[@id="content"]/p[4]/a
+
+//*[@id="content"]/div/div/a
+
+killerjet58
+abcdefg
+
+
+
+ecommmaster123@gmail.com
+aaaaa
+
+Feature : feature to test register page
+
+Scenario Outline: Check if register page can be accessed
+
+Given user is on Home Page
+ When user clicks on Account dropdown menu
+ And user clicks on register
+Then user is navigated to the register page
+
+
+Feature: feature to test register function
+
+Scenario Outline: Check register feature if the data is valid
+
+Given user is on the register page
+ When user enters "Jonathan" as First Name
+ And user enters "Regan" as Last Name
+ And user enters "jonathanreganuntoro@yahoo.com" as email
+ And user enters "0818326755" as phone number
+ And user enters "abcdefg" as password
+ And user enters "abcdefg" as password confirmation
+ And user checks the checkbox for  "Agree to the policy"
+ And user clicks on submit button
+Then user is navigated to the verification page
+
+
+
+
+
+
+
+
+
+https://www.guru99.com/checkbox-and-radio-button-webdriver.html
